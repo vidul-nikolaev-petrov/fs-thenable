@@ -1,6 +1,6 @@
 {
   "name": "fs-thenable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Promised version of the `fs` module for Electron",
   "main": "index.js",
   "scripts": {

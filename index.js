@@ -2,17 +2,24 @@ const fs = typeof window !== 'undefined' ? window.require('fs') : require('fs');
 
 module.exports = exports = new Proxy(fs, {
     get(target, propName) {
+        const prop = target[propName];
+
+        if (typeof prop !== 'function') {
+            return prop;
+        }
+
         return function (...args) {
             return new Promise((resolve, reject) => {
-                args.push((err, data) => {
+                const cb = (err, data) => {
                     if (err) {
                         reject(err);
                     }
                     else {
                         resolve(data);
                     }
-                });
-                target[propName](...args);
+                };
+
+                prop.apply(target, args.concat(cb));
             });
         };
     }
