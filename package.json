@@ -1,0 +1,26 @@
+{
+  "name": "fs-thenable",
+  "version": "1.0.0",
+  "description": "Promised version of the `fs` module for Electron",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vidul-nikolaev-petrov/fs-thenable.git"
+  },
+  "keywords": [
+    "fs",
+    "filesystem",
+    "node.js",
+    "promise",
+    "electron"
+  ],
+  "author": "Vidul Nikolaev Petrov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vidul-nikolaev-petrov/fs-thenable/issues"
+  },
+  "homepage": "https://github.com/vidul-nikolaev-petrov/fs-thenable#readme"
+}
