@@ -6,7 +6,7 @@ fs.readFile(__filename, 'utf8').then(
     function (data) {
         var text = data.slice(3, 12);
         assert(text === 'It works.');
-        console.info('◕‿◕ pass: resolved');
+        console.info('pass: resolved:', text);
     }
 );
 
@@ -15,16 +15,16 @@ fs.readFile(__filename + 'n/a', 'utf8').then(
     function (err) {
         assert(err);
         assert(err.code === 'ENOENT');
-        console.error('◕‿◕ pass: rejected');
+        console.info('pass: rejected', err.code);
     }
 );
 
 ~function() {
-    assert(fs.constants.O_SYNC === 128);
-    console.info('◕‿◕ pass: prop type recongnition (defined)');
+    assert(fs.constants.R_OK !== 0);
+    console.info('pass: prop type recongnition (defined)');
 }();
 
 ~function() {
     assert(fs.NA === undefined);
-    console.info('◕‿◕ pass: prop type recongnition (undefined)');
+    console.info('pass: prop type recongnition (undefined)');
 }();
