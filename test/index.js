@@ -31,7 +31,7 @@ fs.readFile(__filename + 'n/a', 'utf8').then(
 
 function colorGreenPass() {
     return colorGreen('pass');
-};
+}
 
 function colorGreen(text) {
     return `\x1b[42m\x1b[30m ${text} \x1b[0m`;
